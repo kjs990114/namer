@@ -1,5 +1,6 @@
 package com.goodong.namer;
 
+import com.goodong.namer.visitor.NamerVisitor;
 import com.intellij.codeInspection.LocalInspectionTool;
 import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.psi.*;
@@ -26,7 +27,7 @@ public class TestInspection extends LocalInspectionTool {
     @NotNull
     @Override
     public PsiElementVisitor buildVisitor(@NotNull ProblemsHolder holder, boolean isOnTheFly) {
-        return new MyPsiVisitor(holder);
+        return new NamerVisitor(holder);
     }
 
 }
